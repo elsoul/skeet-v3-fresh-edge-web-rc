@@ -10,49 +10,58 @@ import type { ExtendedState } from '@/utils/state.ts'
 import { createTranslator } from 'fresh-i18n'
 import { Github } from 'iconoir-react'
 import Image from '@/islands/ui/Image.tsx'
+import {
+  CLOUDFLARE_LINK,
+  DENO_LINK,
+  EXPO_LINK,
+  FRESH_LINK,
+  NEON_LINK,
+  PRISMA_LINK,
+  SOLANA_COM_LINK,
+} from '@/constants/links.ts'
 
 const logos = [
   {
     title: 'CloudFlare',
     logo: asset('/img/logo/partners/CloudFlareLogoHorizontal.svg'),
     logoInvert: asset('/img/logo/partners/CloudFlareLogoInvertHorizontal.svg'),
-    href: 'https://cloudflare.com/',
+    href: CLOUDFLARE_LINK,
   },
   {
     title: 'Deno',
     logo: asset('/img/logo/partners/DenoLogoHorizontal.svg'),
     logoInvert: asset('/img/logo/partners/DenoLogoInvertHorizontal.svg'),
-    href: 'https://deno.com/',
+    href: DENO_LINK,
   },
   {
     title: 'Neon',
     logo: asset('/img/logo/partners/NeonLogoHorizontal.svg'),
     logoInvert: asset('/img/logo/partners/NeonLogoInvertHorizontal.svg'),
-    href: 'https://neon.tech/',
+    href: NEON_LINK,
   },
   {
     title: 'Prisma',
     logo: asset('/img/logo/partners/PrismaLogoHorizontal.svg'),
     logoInvert: asset('/img/logo/partners/PrismaLogoInvertHorizontal.svg'),
-    href: 'https://prisma.io/',
+    href: PRISMA_LINK,
   },
   {
     title: 'Solana',
     logo: asset('/img/logo/partners/SolanaLogoHorizontal.svg'),
     logoInvert: asset('/img/logo/partners/SolanaLogoInvertHorizontal.svg'),
-    href: 'https://solana.com/',
+    href: SOLANA_COM_LINK,
   },
   {
     title: 'Fresh',
     logo: asset('/img/logo/partners/FreshLogoHorizontal.svg'),
     logoInvert: asset('/img/logo/partners/FreshLogoInvertHorizontal.svg'),
-    href: 'https://fresh.deno.dev/',
+    href: FRESH_LINK,
   },
   {
     title: 'Expo',
     logo: asset('/img/logo/partners/ExpoLogoHorizontal.svg'),
     logoInvert: asset('/img/logo/partners/ExpoLogoInvertHorizontal.svg'),
-    href: 'https://expo.dev/',
+    href: EXPO_LINK,
   },
 ]
 
@@ -96,7 +105,8 @@ export default function HomeHeroRow(
           </h1>
           <p
             className={cn(
-              '-mt-4 max-w-96 text-center text-sm font-medium sm:max-w-lg sm:text-lg lg:-mt-2 lg:max-w-xl lg:text-xl',
+              '-mt-4 max-w-96 sm:max-w-lg sm:text-lg lg:-mt-2 lg:max-w-xl lg:text-xl',
+              'text-center text-sm font-medium tracking-tight',
               lightTextColor,
             )}
           >

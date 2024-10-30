@@ -1,7 +1,10 @@
 import { appInfo } from '@/config.ts'
 import Button from '@/components/ui/Button.tsx'
 import { cn } from '@/lib/utils.ts'
-import { mainShardGradation } from '@/components/utils/tailwinds.ts'
+import {
+  lightTextColor,
+  mainShardGradation,
+} from '@/components/utils/tailwinds.ts'
 import type { ExtendedState } from '@/utils/state.ts'
 import { createTranslator } from 'fresh-i18n'
 import { Discord } from 'iconoir-react'
@@ -25,7 +28,12 @@ export default function CTARow({ state }: Props) {
           >
             {t('common.CTARow.title')}
           </h2>
-          <p className='max-w-xl text-lg font-medium tracking-tight text-zinc-500 dark:text-zinc-400 sm:text-xl'>
+          <p
+            className={cn(
+              'max-w-xl text-lg font-medium tracking-tight sm:text-xl',
+              lightTextColor,
+            )}
+          >
             {t('common.CTARow.body')}
           </p>
         </div>
