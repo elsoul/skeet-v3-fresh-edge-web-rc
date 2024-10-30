@@ -4,7 +4,7 @@
     "jsr:@elsoul/fresh-atom@1.0.0": "1.0.0",
     "jsr:@elsoul/fresh-i18n@1.1.3": "1.1.3",
     "jsr:@elsoul/fresh-sitemap@1.1.1": "1.1.1",
-    "jsr:@elsoul/fresh-theme@1.2.1": "1.2.1",
+    "jsr:@elsoul/fresh-theme@1.3.0": "1.3.0",
     "jsr:@fresh/core@2.0.0-alpha.23": "2.0.0-alpha.23",
     "jsr:@fresh/plugin-tailwind@0.0.1-alpha.7": "0.0.1-alpha.7",
     "jsr:@luca/esbuild-deno-loader@0.11": "0.11.0",
@@ -71,8 +71,8 @@
         "jsr:@std/path@0.224.0"
       ]
     },
-    "@elsoul/fresh-theme@1.2.1": {
-      "integrity": "6d2761361bd86d4a3c895cff310a79d3bc463dc5f96c3d48d8b33fe9b4468700",
+    "@elsoul/fresh-theme@1.3.0": {
+      "integrity": "cc8a0013ea5216dda9125a9ae1419ac7ff4d0caba07a5e66c4ecc4a732d2fccb",
       "dependencies": [
         "jsr:@elsoul/fresh-atom",
         "npm:preact@10.24.3"
@@ -1971,7 +1971,7 @@
       "jsr:@elsoul/fresh-atom@1.0.0",
       "jsr:@elsoul/fresh-i18n@1.1.3",
       "jsr:@elsoul/fresh-sitemap@1.1.1",
-      "jsr:@elsoul/fresh-theme@1.2.1",
+      "jsr:@elsoul/fresh-theme@1.3.0",
       "jsr:@fresh/core@2.0.0-alpha.23",
       "jsr:@fresh/plugin-tailwind@0.0.1-alpha.7",
       "npm:@preact/signals-core@1.8.0",
