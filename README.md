@@ -46,8 +46,6 @@ Demo: https://fresh-web.skeeter.dev/
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
 deno task dev
 ```
