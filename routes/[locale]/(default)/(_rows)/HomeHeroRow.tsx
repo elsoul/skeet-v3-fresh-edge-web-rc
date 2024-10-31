@@ -19,48 +19,66 @@ import {
   PRISMA_LINK,
   SOLANA_COM_LINK,
 } from '@/constants/links.ts'
+import {
+  CLOUD_FLARE_LOGO_HORIZONTAL,
+  CLOUD_FLARE_LOGO_INVERT_HORIZONTAL,
+  DENO_LOGO_HORIZONTAL,
+  DENO_LOGO_INVERT_HORIZONTAL,
+  EXPO_LOGO_HORIZONTAL,
+  EXPO_LOGO_INVERT_HORIZONTAL,
+  FRESH_LOGO_HORIZONTAL,
+  FRESH_LOGO_INVERT_HORIZONTAL,
+  ICON_OPOS_COMPRESSED_COIL,
+  ICON_OPOS_SAGA_PHONE,
+  NEON_LOGO_HORIZONTAL,
+  NEON_LOGO_INVERT_HORIZONTAL,
+  PRISMA_LOGO_HORIZONTAL,
+  PRISMA_LOGO_INVERT_HORIZONTAL,
+  SOLANA_LOGO_HORIZONTAL,
+  SOLANA_LOGO_INVERT_HORIZONTAL,
+} from '@/components/utils/img.ts'
 
 const logos = [
   {
     title: 'CloudFlare',
-    logo: asset('/img/logo/partners/CloudFlareLogoHorizontal.svg'),
-    logoInvert: asset('/img/logo/partners/CloudFlareLogoInvertHorizontal.svg'),
+    logo: asset(CLOUD_FLARE_LOGO_HORIZONTAL),
+    logoInvert: asset(CLOUD_FLARE_LOGO_INVERT_HORIZONTAL),
     href: CLOUDFLARE_LINK,
   },
   {
     title: 'Deno',
-    logo: asset('/img/logo/partners/DenoLogoHorizontal.svg'),
-    logoInvert: asset('/img/logo/partners/DenoLogoInvertHorizontal.svg'),
+    logo: asset(DENO_LOGO_HORIZONTAL),
+    logoInvert: asset(DENO_LOGO_INVERT_HORIZONTAL),
     href: DENO_LINK,
   },
   {
     title: 'Neon',
-    logo: asset('/img/logo/partners/NeonLogoHorizontal.svg'),
-    logoInvert: asset('/img/logo/partners/NeonLogoInvertHorizontal.svg'),
+    logo: asset(NEON_LOGO_HORIZONTAL),
+    logoInvert: asset(NEON_LOGO_INVERT_HORIZONTAL),
     href: NEON_LINK,
   },
   {
     title: 'Prisma',
-    logo: asset('/img/logo/partners/PrismaLogoHorizontal.svg'),
-    logoInvert: asset('/img/logo/partners/PrismaLogoInvertHorizontal.svg'),
+    logo: asset(PRISMA_LOGO_HORIZONTAL),
+    logoInvert: asset(PRISMA_LOGO_INVERT_HORIZONTAL),
     href: PRISMA_LINK,
   },
   {
     title: 'Solana',
-    logo: asset('/img/logo/partners/SolanaLogoHorizontal.svg'),
-    logoInvert: asset('/img/logo/partners/SolanaLogoInvertHorizontal.svg'),
+    logo: asset(SOLANA_LOGO_HORIZONTAL),
+    logoInvert: asset(SOLANA_LOGO_INVERT_HORIZONTAL),
     href: SOLANA_COM_LINK,
   },
   {
     title: 'Fresh',
-    logo: asset('/img/logo/partners/FreshLogoHorizontal.svg'),
-    logoInvert: asset('/img/logo/partners/FreshLogoInvertHorizontal.svg'),
+    logo: asset(FRESH_LOGO_HORIZONTAL),
+    logoInvert: asset(FRESH_LOGO_INVERT_HORIZONTAL),
     href: FRESH_LINK,
   },
   {
     title: 'Expo',
-    logo: asset('/img/logo/partners/ExpoLogoHorizontal.svg'),
-    logoInvert: asset('/img/logo/partners/ExpoLogoInvertHorizontal.svg'),
+    logo: asset(EXPO_LOGO_HORIZONTAL),
+    logoInvert: asset(EXPO_LOGO_INVERT_HORIZONTAL),
     href: EXPO_LINK,
   },
 ]
@@ -78,7 +96,7 @@ export default function HomeHeroRow(
       <div className='relative mx-auto max-w-7xl p-3'>
         <div className='absolute left-0 top-0 opacity-20 dark:opacity-40'>
           <img
-            src={asset('/img/icon/opos/CompressedCoil.png')}
+            src={asset(ICON_OPOS_COMPRESSED_COIL)}
             alt='Background'
             className='h-56 w-56 sm:h-64 sm:w-64 md:h-96 md:w-96 lg:h-[512px] lg:w-[512px]'
           />
@@ -86,7 +104,7 @@ export default function HomeHeroRow(
 
         <div className='absolute bottom-0 right-0 opacity-20 dark:opacity-40'>
           <img
-            src={asset('/img/icon/opos/SagaPhone.png')}
+            src={asset(ICON_OPOS_SAGA_PHONE)}
             alt='Background'
             className='h-56 w-56 sm:h-64 sm:w-64 md:h-96 md:w-96 lg:h-[512px] lg:w-[512px]'
           />

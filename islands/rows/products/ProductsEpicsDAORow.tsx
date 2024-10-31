@@ -11,6 +11,7 @@ import {
 } from '@/constants/links.ts'
 import { Discord } from 'iconoir-react'
 import { useTranslation } from '@/hooks/i18n/useTranslation.ts'
+import { EPICS_DAO_PRODUCT_IMG } from '@/components/utils/img.ts'
 
 export default function ProductsEpicsDAORow() {
   const t = useTranslation()
@@ -31,7 +32,7 @@ export default function ProductsEpicsDAORow() {
             className='hover:opacity-80'
           >
             <img
-              src={asset('/img/daos/EpicsDAO.jpg')}
+              src={asset(EPICS_DAO_PRODUCT_IMG)}
               alt='Epics DAO'
               className='w-full rounded-lg shadow-lg'
             />

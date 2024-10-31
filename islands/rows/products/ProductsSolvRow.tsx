@@ -8,6 +8,7 @@ import { asset } from 'fresh/runtime'
 import { SOLV_GITHUB_LINK, SOLV_WEB_LINK } from '@/constants/links.ts'
 import { Github } from 'iconoir-react'
 import { useTranslation } from '@/hooks/i18n/useTranslation.ts'
+import { SOLV_PRODUCT_IMG } from '@/components/utils/img.ts'
 
 export default function ProductsSolvRow() {
   const t = useTranslation()
@@ -28,7 +29,7 @@ export default function ProductsSolvRow() {
             className='hover:opacity-80'
           >
             <img
-              src={asset('/img/products/solv.jpg')}
+              src={asset(SOLV_PRODUCT_IMG)}
               alt='solv'
               className='w-full rounded-lg shadow-lg'
             />

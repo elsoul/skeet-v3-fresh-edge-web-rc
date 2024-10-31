@@ -11,6 +11,7 @@ import {
 } from '@/constants/links.ts'
 import { Discord } from 'iconoir-react'
 import { useTranslation } from '@/hooks/i18n/useTranslation.ts'
+import { BUIDLERS_COLLECTIVE_PRODUCT_IMG } from '@/components/utils/img.ts'
 
 export default function ProductsBuidlersCollectiveRow() {
   const t = useTranslation()
@@ -31,7 +32,7 @@ export default function ProductsBuidlersCollectiveRow() {
             className='hover:opacity-80'
           >
             <img
-              src={asset('/img/products/BuidlersCollective.jpg')}
+              src={asset(BUIDLERS_COLLECTIVE_PRODUCT_IMG)}
               alt='Buidlers Collective'
               className='w-full rounded-lg shadow-lg'
             />

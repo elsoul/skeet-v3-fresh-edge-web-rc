@@ -11,6 +11,7 @@ import {
 } from '@/constants/links.ts'
 import { Discord } from 'iconoir-react'
 import { useTranslation } from '@/hooks/i18n/useTranslation.ts'
+import { ERPC_PRODUCT_IMG } from '@/components/utils/img.ts'
 
 export default function ProductsErpcRow() {
   const t = useTranslation()
@@ -31,7 +32,7 @@ export default function ProductsErpcRow() {
             className='hover:opacity-80'
           >
             <img
-              src={asset('/img/products/ERPC.jpg')}
+              src={asset(ERPC_PRODUCT_IMG)}
               alt='ERPC'
               className='w-full rounded-lg shadow-lg'
             />

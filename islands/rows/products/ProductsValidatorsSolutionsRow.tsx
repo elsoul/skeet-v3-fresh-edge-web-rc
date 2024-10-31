@@ -11,6 +11,7 @@ import {
 } from '@/constants/links.ts'
 import { Discord } from 'iconoir-react'
 import { useTranslation } from '@/hooks/i18n/useTranslation.ts'
+import { VALIDATORS_SOLUTIONS_PRODUCT_IMG } from '@/components/utils/img.ts'
 
 export default function ProductsValidatorsSolutionsRow() {
   const t = useTranslation()
@@ -31,7 +32,7 @@ export default function ProductsValidatorsSolutionsRow() {
             className='hover:opacity-80'
           >
             <img
-              src={asset('/img/products/ValidatorsSolutions.jpg')}
+              src={asset(VALIDATORS_SOLUTIONS_PRODUCT_IMG)}
               alt='Validators Solutions'
               className='w-full rounded-lg shadow-lg'
             />
