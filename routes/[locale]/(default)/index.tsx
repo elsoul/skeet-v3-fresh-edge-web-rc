@@ -10,7 +10,6 @@ export const handler = define.handlers({
     ctx.state.title = 'metadata.homeTitle'
     ctx.state.description = 'metadata.description'
     ctx.state.ogImage = new URL(asset('/ogp.jpg'), ctx.url).href
-
     return page()
   },
 })

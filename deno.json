@@ -52,7 +52,8 @@
     "iconoir-react": "https://esm.sh/iconoir-react@7.9.0?alias=react:preact/compat,react-dom:preact/compat,@types/react:preact/compat&external=preact",
     "clsx": "npm:clsx@2.1.1",
     "@react-spring/web": "npm:@react-spring/web@9.7.4",
-    "class-variance-authority": "npm:class-variance-authority@0.7.0"
+    "class-variance-authority": "npm:class-variance-authority@0.7.0",
+    "lodash.throttle": "https://raw.githubusercontent.com/lodash/lodash/4.17.21-es/throttle.js"
   },
   "compilerOptions": {
     "lib": ["dom", "dom.asynciterable", "deno.ns"],

@@ -1,5 +1,6 @@
 import { useEffect } from 'preact/hooks'
 import { useSignal } from '@preact/signals'
+import throttle from 'lodash.throttle'
 
 type Props = {
   defaultShowHeader?: boolean
@@ -21,11 +22,15 @@ export function useShowHeader({ defaultShowHeader = true }: Props = {}) {
 
       lastScrollY.value = currentScrollY
     }
+    const throttledHandleScroll = throttle(handleScroll, 100) as (
+      this: Window,
+      ev: Event,
+    ) => void
 
-    globalThis.addEventListener('scroll', handleScroll)
+    globalThis.addEventListener('scroll', throttledHandleScroll)
 
     return () => {
-      globalThis.removeEventListener('scroll', handleScroll)
+      globalThis.removeEventListener('scroll', throttledHandleScroll)
     }
   }, [])
 
