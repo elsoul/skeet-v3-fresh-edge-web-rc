@@ -29,4 +29,12 @@
   .dark ::selection {
     background-color: rgba(82, 82, 91, 0.5);
   }
+  iframe.youtube {
+  height: auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  }
+  h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: 80px; 
+  }
 }

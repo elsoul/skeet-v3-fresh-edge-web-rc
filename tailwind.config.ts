@@ -36,5 +36,9 @@ export default {
       }),
     },
   },
-  plugins: [typographyConfig, animateConfig, scrollbarConfig],
+  plugins: [
+    typographyConfig,
+    animateConfig,
+    scrollbarConfig,
+  ],
 } satisfies Config

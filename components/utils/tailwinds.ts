@@ -3,6 +3,7 @@ export const mainShardGradation =
 
 export const basicTextColor = 'text-zinc-950 dark:text-white'
 export const linkBaseColor = 'text-zinc-700 dark:text-zinc-200 hover:opacity-70'
+export const linkMenuColor = 'text-zinc-500 dark:text-zinc-400 hover:opacity-70'
 export const linkActiveColor =
   'text-blue-500 dark:text-blue-300 hover:opacity-70'
 export const lightTextColor = 'text-zinc-500 dark:text-zinc-400'

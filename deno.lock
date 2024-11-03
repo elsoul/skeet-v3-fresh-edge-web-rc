@@ -11,11 +11,13 @@
     "jsr:@std/assert@0.221": "0.221.0",
     "jsr:@std/assert@0.224": "0.224.0",
     "jsr:@std/bytes@^1.0.2": "1.0.2",
+    "jsr:@std/collections@^1.0.5": "1.0.9",
     "jsr:@std/crypto@1": "1.0.3",
     "jsr:@std/datetime@~0.225.2": "0.225.2",
     "jsr:@std/encoding@1": "1.0.5",
     "jsr:@std/encoding@^1.0.5": "1.0.5",
     "jsr:@std/fmt@1": "1.0.3",
+    "jsr:@std/front-matter@1.0.5": "1.0.5",
     "jsr:@std/fs@0.224.0": "0.224.0",
     "jsr:@std/fs@1": "1.0.5",
     "jsr:@std/html@1": "1.0.3",
@@ -29,6 +31,8 @@
     "jsr:@std/path@^1.0.6": "1.0.7",
     "jsr:@std/path@^1.0.7": "1.0.7",
     "jsr:@std/semver@1": "1.0.3",
+    "jsr:@std/toml@^1.0.1": "1.0.1",
+    "jsr:@std/yaml@^1.0.5": "1.0.5",
     "npm:@preact/signals-core@1.8.0": "1.8.0",
     "npm:@preact/signals@1.3.0": "1.3.0_preact@10.24.3",
     "npm:@preact/signals@^1.2.3": "1.3.0_preact@10.24.3",
@@ -40,11 +44,15 @@
     "npm:cssnano@6.0.3": "6.0.3_postcss@8.4.35",
     "npm:esbuild-wasm@0.23.1": "0.23.1",
     "npm:esbuild@0.23.1": "0.23.1",
+    "npm:github-slugger@2.0.0": "2.0.0",
+    "npm:marked-mangle@1.1.9": "1.1.9_marked@14.1.3",
+    "npm:marked@14.1.3": "14.1.3",
     "npm:postcss@8.4.35": "8.4.35",
     "npm:preact-render-to-string@^6.5.11": "6.5.11_preact@10.24.3",
     "npm:preact@10.22.1": "10.22.1",
     "npm:preact@10.24.3": "10.24.3",
     "npm:preact@^10.24.1": "10.24.3",
+    "npm:prismjs@1.29.0": "1.29.0",
     "npm:tailwind-merge@2.3.0": "2.3.0",
     "npm:tailwind-scrollbar@3.1.0": "3.1.0_tailwindcss@3.4.13__postcss@8.4.47",
     "npm:tailwindcss-animate@1.0.7": "1.0.7_tailwindcss@3.4.13__postcss@8.4.47",
@@ -128,6 +136,9 @@
     "@std/bytes@1.0.2": {
       "integrity": "fbdee322bbd8c599a6af186a1603b3355e59a5fb1baa139f8f4c3c9a1b3e3d57"
     },
+    "@std/collections@1.0.9": {
+      "integrity": "4f58104ead08a04a2199374247f07befe50ba01d9cca8cbb23ab9a0419921e71"
+    },
     "@std/crypto@1.0.3": {
       "integrity": "a2a32f51ddef632d299e3879cd027c630dcd4d1d9a5285d6e6788072f4e51e7f"
     },
@@ -142,6 +153,13 @@
     },
     "@std/fmt@1.0.3": {
       "integrity": "97765c16aa32245ff4e2204ecf7d8562496a3cb8592340a80e7e554e0bb9149f"
+    },
+    "@std/front-matter@1.0.5": {
+      "integrity": "abddc64030a33eb5bc524b8c73e7c417cea09177aaeb4abf75a56b540c4b6e60",
+      "dependencies": [
+        "jsr:@std/toml",
+        "jsr:@std/yaml"
+      ]
     },
     "@std/fs@0.224.0": {
       "integrity": "52a5ec89731ac0ca8f971079339286f88c571a4d61686acf75833f03a89d8e69",
@@ -191,6 +209,15 @@
     },
     "@std/semver@1.0.3": {
       "integrity": "7c139c6076a080eeaa4252c78b95ca5302818d7eafab0470d34cafd9930c13c8"
+    },
+    "@std/toml@1.0.1": {
+      "integrity": "b55b407159930f338d384b1f8fd317c8e8a35e27ebb8946155f49e3a158d16c4",
+      "dependencies": [
+        "jsr:@std/collections"
+      ]
+    },
+    "@std/yaml@1.0.5": {
+      "integrity": "71ba3d334305ee2149391931508b2c293a8490f94a337eef3a09cade1a2a2742"
     }
   },
   "npm": {
@@ -742,6 +769,9 @@
     "function-bind@1.1.2": {
       "integrity": "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA=="
     },
+    "github-slugger@2.0.0": {
+      "integrity": "sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw=="
+    },
     "glob-parent@5.1.2": {
       "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
       "dependencies": [
@@ -846,6 +876,15 @@
     },
     "lru-cache@10.4.3": {
       "integrity": "sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ=="
+    },
+    "marked-mangle@1.1.9_marked@14.1.3": {
+      "integrity": "sha512-eLTXr1xQzba/WZp/trPS0HkR9W02ifasH6IWPrBv++eO2m8POiwV4muQ6Tof2C5Fhdo3z8ggXs6VGw1f931Vsg==",
+      "dependencies": [
+        "marked"
+      ]
+    },
+    "marked@14.1.3": {
+      "integrity": "sha512-ZibJqTULGlt9g5k4VMARAktMAjXoVnnr+Y3aCqW1oDftcV4BA3UmrBifzXoZyenHRk75csiPu9iwsTj4VNBT0g=="
     },
     "mdn-data@2.0.28": {
       "integrity": "sha512-aylIc7Z9y4yzHYAJNuESG3hfhC+0Ibp/MAMiaOZgNv4pmEdFyfZhhhny4MNiAfWdBQ1RQ2mfDWmM1x8SvGyp8g=="
@@ -1208,6 +1247,9 @@
     },
     "preact@10.24.3": {
       "integrity": "sha512-Z2dPnBnMUfyQfSQ+GBdsGa16hz35YmLmtTLhM169uW944hYL6xzTYkJjC07j+Wosz733pMWx0fgON3JNw1jJQA=="
+    },
+    "prismjs@1.29.0": {
+      "integrity": "sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q=="
     },
     "queue-microtask@1.2.3": {
       "integrity": "sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A=="
@@ -1989,13 +2031,20 @@
       "jsr:@elsoul/fresh-theme@1.3.0",
       "jsr:@fresh/core@2.0.0-alpha.23",
       "jsr:@fresh/plugin-tailwind@0.0.1-alpha.7",
+      "jsr:@std/front-matter@1.0.5",
+      "jsr:@std/html@1",
+      "jsr:@std/path@1",
       "npm:@preact/signals-core@1.8.0",
       "npm:@preact/signals@1.3.0",
       "npm:@react-spring/web@9.7.4",
       "npm:@tailwindcss/typography@0.5.14",
       "npm:class-variance-authority@0.7.0",
       "npm:clsx@2.1.1",
+      "npm:github-slugger@2.0.0",
+      "npm:marked-mangle@1.1.9",
+      "npm:marked@14.1.3",
       "npm:preact@10.24.3",
+      "npm:prismjs@1.29.0",
       "npm:tailwind-merge@2.3.0",
       "npm:tailwind-scrollbar@3.1.0",
       "npm:tailwindcss-animate@1.0.7",
