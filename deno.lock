@@ -3,14 +3,14 @@
   "specifiers": {
     "jsr:@elsoul/fresh-atom@1.0.0": "1.0.0",
     "jsr:@elsoul/fresh-i18n@1.1.3": "1.1.3",
-    "jsr:@elsoul/fresh-sitemap@1.1.1": "1.1.1",
+    "jsr:@elsoul/fresh-sitemap@1.2.1": "1.2.1",
     "jsr:@elsoul/fresh-theme@1.3.0": "1.3.0",
     "jsr:@fresh/core@2.0.0-alpha.23": "2.0.0-alpha.23",
     "jsr:@fresh/plugin-tailwind@0.0.1-alpha.7": "0.0.1-alpha.7",
     "jsr:@luca/esbuild-deno-loader@0.11": "0.11.0",
     "jsr:@std/assert@0.221": "0.221.0",
     "jsr:@std/assert@0.224": "0.224.0",
-    "jsr:@std/bytes@^1.0.2": "1.0.2",
+    "jsr:@std/bytes@^1.0.2": "1.0.3",
     "jsr:@std/collections@^1.0.5": "1.0.9",
     "jsr:@std/crypto@1": "1.0.3",
     "jsr:@std/datetime@~0.225.2": "0.225.2",
@@ -26,10 +26,10 @@
     "jsr:@std/path@0.221": "0.221.0",
     "jsr:@std/path@0.224": "0.224.0",
     "jsr:@std/path@0.224.0": "0.224.0",
-    "jsr:@std/path@1": "1.0.7",
+    "jsr:@std/path@1": "1.0.8",
     "jsr:@std/path@1.0.6": "1.0.6",
-    "jsr:@std/path@^1.0.6": "1.0.7",
-    "jsr:@std/path@^1.0.7": "1.0.7",
+    "jsr:@std/path@^1.0.6": "1.0.8",
+    "jsr:@std/path@^1.0.7": "1.0.8",
     "jsr:@std/semver@1": "1.0.3",
     "jsr:@std/toml@^1.0.1": "1.0.1",
     "jsr:@std/yaml@^1.0.5": "1.0.5",
@@ -72,8 +72,8 @@
         "jsr:@std/path@1.0.6"
       ]
     },
-    "@elsoul/fresh-sitemap@1.1.1": {
-      "integrity": "d6bf800c90cc1e1f38b07f5a652f4fc150ed6423568f5465ff43fde5469e4282",
+    "@elsoul/fresh-sitemap@1.2.1": {
+      "integrity": "0de65047d23c1c1754035bb3dedd5e83d7ef9069d621dffca613dba981a99713",
       "dependencies": [
         "jsr:@std/fs@0.224.0",
         "jsr:@std/path@0.224.0"
@@ -135,6 +135,9 @@
     },
     "@std/bytes@1.0.2": {
       "integrity": "fbdee322bbd8c599a6af186a1603b3355e59a5fb1baa139f8f4c3c9a1b3e3d57"
+    },
+    "@std/bytes@1.0.3": {
+      "integrity": "e5d5b9e685966314e4edb4be60dfc4bd7624a075bfd4ec8109252b4320f76452"
     },
     "@std/collections@1.0.9": {
       "integrity": "4f58104ead08a04a2199374247f07befe50ba01d9cca8cbb23ab9a0419921e71"
@@ -206,6 +209,9 @@
     },
     "@std/path@1.0.7": {
       "integrity": "76a689e07f0e15dcc6002ec39d0866797e7156629212b28f27179b8a5c3b33a1"
+    },
+    "@std/path@1.0.8": {
+      "integrity": "548fa456bb6a04d3c1a1e7477986b6cffbce95102d0bb447c67c4ee70e0364be"
     },
     "@std/semver@1.0.3": {
       "integrity": "7c139c6076a080eeaa4252c78b95ca5302818d7eafab0470d34cafd9930c13c8"
@@ -2027,7 +2033,7 @@
     "dependencies": [
       "jsr:@elsoul/fresh-atom@1.0.0",
       "jsr:@elsoul/fresh-i18n@1.1.3",
-      "jsr:@elsoul/fresh-sitemap@1.1.1",
+      "jsr:@elsoul/fresh-sitemap@1.2.1",
       "jsr:@elsoul/fresh-theme@1.3.0",
       "jsr:@fresh/core@2.0.0-alpha.23",
       "jsr:@fresh/plugin-tailwind@0.0.1-alpha.7",

@@ -13,7 +13,7 @@ if (Deno.args.includes('build')) {
   await saveSitemapAndRobots(
     `https://${appInfo.domain}`,
     './routes',
-    './articles',
+    './posts',
     './static/sitemap.xml',
     './static/robots.txt',
     { languages: ['en', 'ja'], defaultLanguage: 'en' },
