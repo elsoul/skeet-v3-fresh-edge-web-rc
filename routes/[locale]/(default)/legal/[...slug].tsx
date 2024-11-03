@@ -36,6 +36,7 @@ export const handler = define.handlers({
 
     return page({
       page: {
+        ctx,
         body,
       },
     })

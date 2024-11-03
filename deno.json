@@ -32,7 +32,7 @@
     "fresh": "jsr:@fresh/core@2.0.0-alpha.23",
     "@fresh/plugin-tailwind": "jsr:@fresh/plugin-tailwind@0.0.1-alpha.7",
     "fresh-atom": "jsr:@elsoul/fresh-atom@1.0.0",
-    "fresh-i18n": "jsr:@elsoul/fresh-i18n@1.1.3",
+    "fresh-i18n": "jsr:@elsoul/fresh-i18n@1.2.0",
     "fresh-theme": "jsr:@elsoul/fresh-theme@1.3.0",
     "fresh-sitemap": "jsr:@elsoul/fresh-sitemap@1.2.1",
     "preact": "npm:preact@10.24.3",

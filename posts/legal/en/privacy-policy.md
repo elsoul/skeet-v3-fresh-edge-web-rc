@@ -12,8 +12,6 @@ description: Privacy policy
    first time you visit this website, you consent to the use of cookies each
    time you visit the installation.
 
-https://www.youtube.com/watch?v=t4KHXqguTi8
-
 ## B. Acknowledgments
 
 This document was created using the SEQ Legal (seqlegal.com) template and
