@@ -124,6 +124,7 @@ export default define.page(function App({ Component, state, url }) {
           sizes='2048x2048'
         />
         <link rel='stylesheet' href={asset('/styles.css')} />
+        <link rel='stylesheet' href={asset('/prism.css')} />
       </head>
       <body>
         <Component />

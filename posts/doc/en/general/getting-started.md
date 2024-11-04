@@ -16,7 +16,7 @@ description: Getting Started Skeet Framework
 
 _Italic Text_
 
-~Strikethrough Text~
+~~Strikethrough Text~~
 
 - Unordered List Item 1
 - Unordered List Item 2
@@ -39,36 +39,30 @@ console.log('Hello, World!')
 
 ## Code Sample
 
-```tsx:/src/app/[locale]/(default)/layout.tsx
+```ts main.ts
+import { App, fsRoutes, staticFiles, trailingSlashes } from 'fresh'
+import { i18nPlugin } from 'fresh-i18n'
+import type { ExtendedState } from '@/utils/state.ts'
 
-import { unstable_setRequestLocale } from 'next-intl/server'
-import DefaultHeader from './DefaultHeader'
-import DefaultFooter from './DefaultFooter'
+export const app = new App<ExtendedState>({
+  root: import.meta.url,
+})
+  .use(staticFiles())
+  .use(trailingSlashes('never'))
+  .use(i18nPlugin({
+    languages: ['en', 'ja'],
+    defaultLanguage: 'en',
+    localesDir: './locales',
+  }))
 
-type Props = {
-  children: React.ReactNode
-  params: {
-    locale: string
-  }
+await fsRoutes(app, {
+  loadIsland: (path) => import(`./islands/${path}`),
+  loadRoute: (path) => import(`./routes/${path}`),
+})
+
+if (import.meta.main) {
+  await app.listen()
 }
-
-export default async function DefaultLayout({
-  children,
-  params: { locale },
-}: Props) {
-  unstable_setRequestLocale(locale)
-
-  return (
-    <>
-      <div className="flex flex-col">
-        <DefaultHeader />
-        <main className="min-h-screen">{children}</main>
-        <DefaultFooter />
-      </div>
-    </>
-  )
-}
-
 ```
 
 ## YouTube Embed

@@ -2,7 +2,7 @@ export const mainShardGradation =
   'bg-gradient-to-b from-zinc-800 via-zinc-700 to-zinc-500 bg-clip-text text-transparent dark:from-white dark:via-zinc-100 dark:to-zinc-300'
 
 export const basicTextColor = 'text-zinc-950 dark:text-white'
-export const blightTextColor = 'text-zinc-700 dark:text-zinc-300'
+export const blightTextColor = 'text-zinc-600 dark:text-zinc-300'
 export const lightTextColor = 'text-zinc-500 dark:text-zinc-400'
 export const linkBaseColor = 'text-zinc-700 dark:text-zinc-200 hover:opacity-70'
 export const linkMenuColor = 'text-zinc-500 dark:text-zinc-400 hover:opacity-70'

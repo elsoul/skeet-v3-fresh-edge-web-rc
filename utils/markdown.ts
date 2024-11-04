@@ -89,14 +89,14 @@ class DefaultRenderer extends Marked.Renderer {
       title = match[2] ?? ''
     }
 
-    let out = `<div class="fenced-code">`
+    let out = `<div class="w-full mb-2">`
 
     if (title) {
-      out += `<div class="fenced-code-header">
-        <span class="fenced-code-title lang-${lang}">
-          ${title ? escapeHtml(String(title)) : '&nbsp;'}
-        </span>
-      </div>`
+      out += `<div class="rounded-t-xl w-full overflow-x-auto scrollbar-none">
+      <span class="lang-${lang}">
+        ${title ? escapeHtml(String(title)) : '&nbsp;'}
+      </span>
+    </div>`
     }
 
     const grammar = lang && Object.hasOwnProperty.call(Prism.languages, lang)
@@ -108,7 +108,7 @@ class DefaultRenderer extends Marked.Renderer {
     } else {
       const html = Prism.highlight(text, grammar, lang)
       out +=
-        `<pre class="highlight highlight-source-${lang} notranslate lang-${lang}"><code>${html}</code></pre>`
+        `<pre class="highlight highlight-source-${lang} notranslate lang-${lang} p-2 overflow-x-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-track-white scrollbar-thumb-zinc-300 dark:scrollbar-track-zinc-950 dark:scrollbar-thumb-zinc-600"><code>${html}</code></pre>`
     }
 
     out += `</div>`
