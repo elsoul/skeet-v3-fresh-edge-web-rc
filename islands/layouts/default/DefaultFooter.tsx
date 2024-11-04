@@ -12,6 +12,7 @@ import { defaultFooterNav } from './defaultNavs.ts'
 import { cn } from '@/lib/utils.ts'
 import GreenHostingBadge from '@/components/common/GreenHostingBadge.tsx'
 import {
+  lightBorderColor,
   lightTextColor,
   linkActiveColor,
   linkBaseColor,
@@ -30,7 +31,8 @@ export default function DefaultFooter() {
         class={cn(
           'mx-auto w-full max-w-7xl px-6 pb-8 pt-10',
           'flex flex-col gap-10',
-          'border-t border-zinc-200 dark:border-zinc-500',
+          'border-t',
+          lightBorderColor,
         )}
       >
         <div class='flex flex-col items-stretch justify-between gap-8 sm:flex-row'>

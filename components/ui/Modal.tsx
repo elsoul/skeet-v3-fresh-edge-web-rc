@@ -2,6 +2,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils.ts'
 import { XmarkCircle } from 'iconoir-react'
 import { basicBgColor } from '@/components/utils/tailwinds.ts'
+import { createPortal } from 'preact/compat'
 
 const ModalOverlay = (
   { isOpen, onClose }: { isOpen: boolean; onClose: () => void },
@@ -10,7 +11,7 @@ const ModalOverlay = (
     ? (
       <div
         className={cn(
-          'fixed inset-0 z-40 bg-black/60 h-screen',
+          'fixed inset-0 z-[1000] bg-black/60 h-screen',
           'transition-opacity',
           isOpen ? 'opacity-100' : 'opacity-0',
         )}
@@ -21,7 +22,7 @@ const ModalOverlay = (
 )
 
 const modalVariants = cva(
-  `fixed z-50 p-6 shadow-lg transition-all ease-in-out ${basicBgColor}`,
+  `fixed z-[1100] p-6 shadow-lg transition-all ease-in-out ${basicBgColor}`,
   {
     variants: {
       position: {
@@ -54,8 +55,6 @@ const ModalContent = (
       <div
         class={cn(
           modalVariants({ position }),
-          'transition-transform',
-          isOpen ? 'translate-x-0' : '-translate-x-full',
           className,
         )}
       >
@@ -82,15 +81,20 @@ export const Modal = ({
   children,
   className,
 }: ModalContentProps) => (
-  <>
-    <ModalOverlay isOpen={isOpen} onClose={onClose} />
-    <ModalContent
-      isOpen={isOpen}
-      onClose={onClose}
-      position={position}
-      className={className}
-    >
-      {children}
-    </ModalContent>
-  </>
+  isOpen
+    ? createPortal(
+      <>
+        <ModalOverlay isOpen={isOpen} onClose={onClose} />
+        <ModalContent
+          isOpen={isOpen}
+          onClose={onClose}
+          position={position}
+          className={className}
+        >
+          {children}
+        </ModalContent>
+      </>,
+      document.body,
+    )
+    : null
 )

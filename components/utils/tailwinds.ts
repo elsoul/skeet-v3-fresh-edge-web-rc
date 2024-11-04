@@ -9,6 +9,7 @@ export const linkActiveColor =
 export const lightTextColor = 'text-zinc-500 dark:text-zinc-400'
 
 export const basicBorderColor = 'border-zinc-600 dark:border-zinc-300'
+export const lightBorderColor = 'border-zinc-200 dark:border-zinc-500'
 
 export const basicBgColor = 'bg-white dark:bg-zinc-950'
 export const basicHoverBgColor = 'hover:bg-zinc-100 dark:hover:bg-zinc-800'

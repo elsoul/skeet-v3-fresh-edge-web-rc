@@ -113,7 +113,7 @@ export default function HomeHeroRow(
         <div className='relative mx-auto flex z-10 max-w-3xl flex-col items-center gap-6 py-24 md:py-40 lg:max-w-4xl'>
           <h1
             className={cn(
-              'py-2 text-center text-4xl font-bold tracking-tighter sm:text-7xl lg:text-7xl',
+              'py-2 text-center text-4xl font-bold tracking-tighter sm:text-6xl lg:text-7xl',
               mainShardGradation,
             )}
           >

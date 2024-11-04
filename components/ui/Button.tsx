@@ -14,7 +14,9 @@ const buttonVariants = cva(
         warning: 'bg-yellow-500 text-white dark:bg-yellow-700',
       },
       buttonType: {
-        default: 'px-4 py-2 rounded-lg flex flex-row',
+        default:
+          'px-4 py-2 rounded-lg flex flex-row items-center justify-center',
+        small: 'px-2 py-1 rounded flex flex-row items-center justify-center',
         icon: 'p-2 rounded-xl',
       },
     },
@@ -30,7 +32,7 @@ interface ButtonProps
     JSX.HTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   children: preact.ComponentChildren
-  buttonType?: 'default' | 'icon'
+  buttonType?: 'default' | 'icon' | 'small'
 }
 
 const Button = ({ variant, buttonType, children, ...props }: ButtonProps) => {

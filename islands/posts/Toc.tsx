@@ -2,7 +2,11 @@ import { MarkdownHeading } from '@/utils/markdown.ts'
 import { cn } from '@/lib/utils.ts'
 import { useTranslation } from '@/hooks/i18n/useTranslation.ts'
 import { useActiveHeading } from '@/hooks/posts/useActiveHeading.ts'
-import { linkActiveColor, linkMenuColor } from '@/components/utils/tailwinds.ts'
+import {
+  basicTextColor,
+  linkActiveColor,
+  linkMenuColor,
+} from '@/components/utils/tailwinds.ts'
 
 type Props = {
   headings: MarkdownHeading[]
@@ -17,7 +21,12 @@ export default function Toc({ headings }: Props) {
       {headings.length > 0 && (
         <>
           <div className='p-4 lg:ml-6'>
-            <p className='text-base font-semibold tracking-tight'>
+            <p
+              className={cn(
+                'text-base font-semibold tracking-tight',
+                basicTextColor,
+              )}
+            >
               {t('common.tableOfContents')}
             </p>
           </div>

@@ -43,7 +43,7 @@ export default function DefaultModalNav() {
         <nav className='grid gap-2 text-lg font-medium'>
           <div className='mb-6 flex flex-row items-start'>
             <LogoHorizontalLink
-              className='w-24'
+              className='w-20'
               onClick={() => {
                 isOpen.value = false
               }}
