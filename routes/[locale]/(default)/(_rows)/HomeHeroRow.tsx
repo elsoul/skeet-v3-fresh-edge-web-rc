@@ -2,7 +2,7 @@ import Button from '@/components/ui/Button.tsx'
 import { appInfo } from '@/config.ts'
 import { asset } from 'fresh/runtime'
 import {
-  lightTextColor,
+  blightTextColor,
   mainShardGradation,
 } from '@/components/utils/tailwinds.ts'
 import { cn } from '@/lib/utils.ts'
@@ -125,7 +125,7 @@ export default function HomeHeroRow(
             className={cn(
               '-mt-4 max-w-96 sm:max-w-lg sm:text-lg lg:-mt-2 lg:max-w-xl lg:text-xl',
               'text-center text-sm font-medium tracking-tight',
-              lightTextColor,
+              blightTextColor,
             )}
           >
             {t('common.HomeHeroRow.subtitle1')} <br />

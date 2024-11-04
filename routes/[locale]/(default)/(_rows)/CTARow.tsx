@@ -2,7 +2,7 @@ import { appInfo } from '@/config.ts'
 import Button from '@/components/ui/Button.tsx'
 import { cn } from '@/lib/utils.ts'
 import {
-  lightTextColor,
+  blightTextColor,
   mainShardGradation,
 } from '@/components/utils/tailwinds.ts'
 import type { ExtendedState } from '@/utils/state.ts'
@@ -31,7 +31,7 @@ export default function CTARow({ state }: Props) {
           <p
             className={cn(
               'max-w-xl text-lg font-medium tracking-tight sm:text-xl',
-              lightTextColor,
+              blightTextColor,
             )}
           >
             {t('common.CTARow.body')}

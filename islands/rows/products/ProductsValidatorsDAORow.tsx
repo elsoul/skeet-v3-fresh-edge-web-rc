@@ -1,7 +1,7 @@
 import Button from '@/components/ui/Button.tsx'
 import { cn } from '@/lib/utils.ts'
 import {
-  lightTextColor,
+  blightTextColor,
   mainShardGradation,
 } from '@/components/utils/tailwinds.ts'
 import { asset } from 'fresh/runtime'
@@ -50,7 +50,7 @@ export default function ProductsValidatorsDAORow() {
           <p
             className={cn(
               'max-w-xl text-lg font-medium tracking-tight sm:text-xl',
-              lightTextColor,
+              blightTextColor,
             )}
           >
             {t('common.ProductsValidatorsDAORow.body')}
