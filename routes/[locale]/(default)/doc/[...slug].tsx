@@ -9,15 +9,13 @@ import {
   mainShardGradation,
 } from '@/components/utils/tailwinds.ts'
 import Toc from '@/islands/posts/Toc.tsx'
-import NewsHeader from '@/islands/layouts/news/NewsHeader.tsx'
-import { newsPosts } from '@/generated/newsPostsIndex.ts'
-import NewsIndexRow from '@/islands/rows/news/NewsIndexRow.tsx'
 import Pager from '@/islands/posts/Pager.tsx'
+import DocHeader from '@/islands/layouts/doc/DocHeader.tsx'
 
-const kind = 'news'
+const kind = 'doc'
 
 const pattern = new URLPattern({
-  pathname: `/:locale/${kind}/:year/:month/:date/:page*`,
+  pathname: `/:locale/${kind}/:page*`,
 })
 
 export const handler = define.handlers({
@@ -39,77 +37,56 @@ export const handler = define.handlers({
 
     const { body, attrs } = frontMatter<Record<string, string>>(post)
 
-    const slugParts = ctx.params.slug.split('/')
-    if (slugParts.length < 3) throw new HttpError(404)
-
-    const [year, month, day] = slugParts
-    const formattedDate = `${year}.${month}.${day}`
-
     ctx.state.title = attrs.title
     ctx.state.description = attrs.description
-    ctx.state.ogImage = new URL(asset(`${attrs.thumbnail}`), ctx.url).href
+    ctx.state.ogImage = new URL(asset(`ogp.jpg`), ctx.url).href
 
-    const allPosts = newsPosts[ctx.params.locale as keyof typeof newsPosts] ||
-      []
-    if (!allPosts) {
-      throw new HttpError(404)
-    }
+    // const allPosts = newsPosts[ctx.params.locale as keyof typeof newsPosts] ||
+    //   []
+    // if (!allPosts) {
+    //   throw new HttpError(404)
+    // }
 
-    const postPath = `/${kind}/${ctx.params.slug}`
-    const currentIndex = allPosts.findIndex((post) => post.path === postPath)
+    // const postPath = `/${kind}/${ctx.params.slug}`
+    // const currentIndex = allPosts.findIndex((post) => post.path === postPath)
 
-    const pagerData = {
-      nextPage: allPosts[currentIndex + 1],
-      prevPage: allPosts[currentIndex - 1],
-    }
+    // const pagerData = {
+    //   nextPage: allPosts[currentIndex + 1],
+    //   prevPage: allPosts[currentIndex - 1],
+    // }
 
     return page({
       page: {
         ctx,
         body,
         attrs,
-        date: formattedDate,
-        pagerData,
+        // pagerData,
       },
     })
   },
 })
 
-export default define.page<typeof handler>(function NewsSlugPage(props) {
+export default define.page<typeof handler>(function DocSlugPage(props) {
   const { html, headings } = renderMarkdown(props.data.page.body)
   return (
     <>
-      <NewsHeader title={props.state.title || 'News'} headings={headings} />
-      <div className='mx-auto max-w-4xl p-3 py-8 pt-24 text-center'>
-        <time
-          dateTime={props.data.page.date as string}
-          className={lightTextColor}
-        >
-          {props.data.page.date}
-        </time>
-        <h1
-          className={cn(
-            'py-6 text-4xl font-medium tracking-tight md:text-5xl',
-            mainShardGradation,
-          )}
-        >
-          {props.state.title}
-        </h1>
-      </div>
-      <div className='mx-auto max-w-5xl p-3 md:py-6'>
-        <img
-          src={asset(props.data.page.attrs.thumbnail)}
-          className='w-full rounded-xl'
-        />
-      </div>
+      <DocHeader headings={headings} />
       <div className='mx-auto max-w-4xl p-3 md:py-8'>
         <div className='grid grid-cols-1 gap-4 md:grid-cols-3'>
           <div className='p-4 md:col-span-2 flex flex-col gap-12'>
+            <h1
+              className={cn(
+                'text-3xl font-bold tracking-tight',
+                mainShardGradation,
+              )}
+            >
+              {props.state.title}
+            </h1>
             <div
               class='prose prose-zinc dark:prose-invert'
               dangerouslySetInnerHTML={{ __html: html }}
             />
-            <Pager pagerData={props.data.page.pagerData} />
+            {/* <Pager pagerData={props.data.page.pagerData} /> */}
           </div>
           <div className='max-h-full p-4 md:col-span-1'>
             <div
@@ -125,7 +102,6 @@ export default define.page<typeof handler>(function NewsSlugPage(props) {
           </div>
         </div>
       </div>
-      <NewsIndexRow defaultShowCounts={3} />
     </>
   )
 })
