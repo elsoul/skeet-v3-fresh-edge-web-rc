@@ -40,10 +40,10 @@ const DocMenuSection = ({ section }: DocMenuSectionProps) => {
           'cursor-pointer hover:opacity-70',
         )}
       >
-        <Link href={section.route} className='w-full'>
+        <Link href={section.path} className='w-full'>
           <span
             className={cn(
-              isActivePath(section.route) ? linkActiveColor : basicTextColor,
+              isActivePath(section.path) ? linkActiveColor : basicTextColor,
               'flex-1 text-sm font-bold',
             )}
           >
@@ -73,9 +73,9 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
 
   useEffect(() => {
     const hasActiveSubItem = item.subItems?.some((subItem) =>
-      isActivePath(subItem.route)
+      isActivePath(subItem.path)
     ) || false
-    isOpen.value = isActivePath(item.route as string) || hasActiveSubItem
+    isOpen.value = isActivePath(item.path as string) || hasActiveSubItem
   }, [item, isActivePath])
 
   return (
@@ -92,7 +92,7 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
             <div class='flex flex-row justify-between items-center w-full'>
               <p
                 className={cn(
-                  isActivePath(item.route as string)
+                  isActivePath(item.path as string)
                     ? linkActiveColor
                     : linkMenuColor,
                   'text-sm',
@@ -102,7 +102,7 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
               </p>
               <p
                 className={cn(
-                  isActivePath(item.route as string)
+                  isActivePath(item.path as string)
                     ? linkActiveColor
                     : linkMenuColor,
                   'text-sm',
@@ -116,10 +116,10 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
           )
           : (
             <>
-              <Link href={item.route as string} className='w-full'>
+              <Link href={item.path as string} className='w-full'>
                 <span
                   className={cn(
-                    isActivePath(item.route as string)
+                    isActivePath(item.path as string)
                       ? linkActiveColor
                       : linkMenuColor,
                     'flex-1 text-sm',
@@ -137,10 +137,10 @@ const DocMenuItem = ({ item }: DocMenuItemProps) => {
         >
           {item.subItems.map((subItem) => (
             <li key={subItem.title} className='mb-1 w-full'>
-              <Link href={subItem.route} className='w-full'>
+              <Link href={subItem.path} className='w-full'>
                 <p
                   className={cn(
-                    isActivePath(subItem.route)
+                    isActivePath(subItem.path)
                       ? linkActiveColor
                       : linkMenuColor,
                     'w-full py-2 text-sm hover:opacity-70',

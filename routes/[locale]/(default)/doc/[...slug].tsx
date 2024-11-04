@@ -1,16 +1,14 @@
 import { define } from '@/utils/state.ts'
 import { asset } from 'fresh/runtime'
 import { HttpError, page } from 'fresh'
-import { getPost } from '@/utils/posts.ts'
+import { getAllPaths, getPost } from '@/utils/posts.ts'
 import { frontMatter, renderMarkdown } from '@/utils/markdown.ts'
 import { cn } from '@/lib/utils.ts'
-import {
-  lightTextColor,
-  mainShardGradation,
-} from '@/components/utils/tailwinds.ts'
+import { mainShardGradation } from '@/components/utils/tailwinds.ts'
 import Toc from '@/islands/posts/Toc.tsx'
-import Pager from '@/islands/posts/Pager.tsx'
 import DocHeader from '@/islands/layouts/doc/DocHeader.tsx'
+import { docMenuData } from '@/islands/layouts/doc/docNavs.ts'
+import DocPager from '@/islands/layouts/doc/DocPager.tsx'
 
 const kind = 'doc'
 
@@ -41,26 +39,25 @@ export const handler = define.handlers({
     ctx.state.description = attrs.description
     ctx.state.ogImage = new URL(asset(`ogp.jpg`), ctx.url).href
 
-    // const allPosts = newsPosts[ctx.params.locale as keyof typeof newsPosts] ||
-    //   []
-    // if (!allPosts) {
-    //   throw new HttpError(404)
-    // }
+    const allPosts = getAllPaths(docMenuData)
+    if (!allPosts) {
+      throw new HttpError(404)
+    }
 
-    // const postPath = `/${kind}/${ctx.params.slug}`
-    // const currentIndex = allPosts.findIndex((post) => post.path === postPath)
+    const postPath = `/${kind}/${ctx.params.slug}`
+    const currentIndex = allPosts.findIndex((post) => post.path === postPath)
 
-    // const pagerData = {
-    //   nextPage: allPosts[currentIndex + 1],
-    //   prevPage: allPosts[currentIndex - 1],
-    // }
+    const pagerData = {
+      nextPage: allPosts[currentIndex + 1],
+      prevPage: allPosts[currentIndex - 1],
+    }
 
     return page({
       page: {
         ctx,
         body,
         attrs,
-        // pagerData,
+        pagerData,
       },
     })
   },
@@ -86,7 +83,7 @@ export default define.page<typeof handler>(function DocSlugPage(props) {
               class='prose prose-zinc dark:prose-invert'
               dangerouslySetInnerHTML={{ __html: html }}
             />
-            {/* <Pager pagerData={props.data.page.pagerData} /> */}
+            <DocPager pagerData={props.data.page.pagerData} />
           </div>
           <div className='max-h-full p-4 md:col-span-1'>
             <div

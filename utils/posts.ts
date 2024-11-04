@@ -20,33 +20,33 @@ export async function getPost(
 
 export type SubItem = {
   title: string
-  route: string
+  path: string
 }
 
 export type Item = {
   title: string
-  route?: string
+  path?: string
   subItems?: SubItem[]
 }
 
 export type Section = {
   title: string
-  route: string
+  path: string
   items?: Item[]
 }
 
-export const getAllRoutes = (menuData: Section[]) => {
-  const routes: string[] = []
+export const getAllPaths = (menuData: Section[]) => {
+  const paths: { path: string; title: string }[] = []
 
-  const collectRoutes = (items: Item[]) => {
+  const collectPaths = (items: Item[]) => {
     items.forEach((item) => {
-      if (item.route) {
-        routes.push(item.route)
+      if (item.path) {
+        paths.push({ path: item.path, title: item.title })
       }
       if (item.subItems) {
         item.subItems.forEach((subItem) => {
-          if (subItem.route) {
-            routes.push(subItem.route)
+          if (subItem.path) {
+            paths.push({ path: subItem.path, title: subItem.title })
           }
         })
       }
@@ -54,13 +54,13 @@ export const getAllRoutes = (menuData: Section[]) => {
   }
 
   menuData.forEach((section) => {
-    if (section.route) {
-      routes.push(section.route)
+    if (section.path) {
+      paths.push({ path: section.path, title: section.title })
     }
     if (section.items) {
-      collectRoutes(section.items)
+      collectPaths(section.items)
     }
   })
 
-  return routes
+  return paths
 }
