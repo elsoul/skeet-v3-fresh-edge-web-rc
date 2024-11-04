@@ -108,6 +108,17 @@ export async function generateDatePostsIndex(config: DatePostsConfig) {
     )
   };`
 
+  // Check if the content has changed
+  try {
+    const existingContent = await Deno.readTextFile(exportPath)
+    if (existingContent === tsContent) {
+      console.log(`No changes detected in ${exportPath}, skipping write.`)
+      return
+    }
+  } catch {
+    // If file does not exist, proceed to write new content
+  }
+
   await Deno.writeTextFile(exportPath, tsContent)
   console.log(`Date-based posts index file generated at ${exportPath}`)
 

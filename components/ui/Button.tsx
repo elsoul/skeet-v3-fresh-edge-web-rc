@@ -35,11 +35,23 @@ interface ButtonProps
   buttonType?: 'default' | 'icon' | 'small'
 }
 
-const Button = ({ variant, buttonType, children, ...props }: ButtonProps) => {
+const Button = (
+  { variant = 'default', buttonType = 'default', children, ...props }:
+    ButtonProps,
+) => {
   return (
     <button
       {...props}
-      class={cn(buttonVariants({ variant, buttonType }), props.class)}
+      class={cn(
+        buttonVariants({ variant, buttonType }),
+        props.class,
+        props.className,
+      )}
+      className={cn(
+        buttonVariants({ variant, buttonType }),
+        props.class,
+        props.className,
+      )}
     >
       {children}
     </button>

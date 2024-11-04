@@ -4,6 +4,7 @@ import { page } from 'fresh'
 import HomeHeroRow from '@/routes/[locale]/(default)/(_rows)/HomeHeroRow.tsx'
 import CTARow from '@/routes/[locale]/(default)/(_rows)/CTARow.tsx'
 import ProductsSlideRow from '@/islands/rows/products/ProductsSlideRow.tsx'
+import NewsIndexRow from '@/islands/rows/news/NewsIndexRow.tsx'
 
 export const handler = define.handlers({
   GET(ctx) {
@@ -20,6 +21,7 @@ export default define.page<typeof handler>(function Home(props) {
       <HomeHeroRow state={props.state} />
       <CTARow state={props.state} />
       <ProductsSlideRow />
+      <NewsIndexRow defaultShowCounts={3} />
     </>
   )
 })

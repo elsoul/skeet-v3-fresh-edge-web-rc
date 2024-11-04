@@ -22,7 +22,7 @@ export default function CTARow({ state }: Props) {
         <div>
           <h2
             className={cn(
-              'py-2 text-4xl font-extrabold tracking-tighter sm:text-5xl',
+              'p-2 text-4xl font-extrabold tracking-tighter sm:text-5xl',
               mainShardGradation,
             )}
           >
@@ -30,7 +30,7 @@ export default function CTARow({ state }: Props) {
           </h2>
           <p
             className={cn(
-              'max-w-xl text-lg font-medium tracking-tight sm:text-xl',
+              'max-w-xl text-lg font-medium tracking-tight sm:text-xl px-2',
               blightTextColor,
             )}
           >

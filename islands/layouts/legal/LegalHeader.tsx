@@ -1,14 +1,18 @@
 import { cn } from '@/lib/utils.ts'
 import { useShowHeader } from '@/hooks/utils/useShowHeader.ts'
-import { lightBorderColor } from '@/components/utils/tailwinds.ts'
+import {
+  basicTextColor,
+  lightBorderColor,
+} from '@/components/utils/tailwinds.ts'
 import TocMenuModalNav from '@/islands/layouts/posts/TocMenuModalNav.tsx'
 import { MarkdownHeading } from '@/utils/markdown.ts'
 
 type Props = {
+  title: string
   headings: MarkdownHeading[]
 }
 
-export default function LegalHeader({ headings }: Props) {
+export default function LegalHeader({ title, headings }: Props) {
   const showHeader = useShowHeader()
   return (
     <>
@@ -25,6 +29,7 @@ export default function LegalHeader({ headings }: Props) {
         )}
       >
         <div>
+          <p class={cn('text-xs', basicTextColor)}>{title}</p>
         </div>
         <div className='flex flex-grow' />
         <div>

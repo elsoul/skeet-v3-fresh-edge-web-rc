@@ -38,15 +38,12 @@ class DefaultRenderer extends Marked.Renderer {
     }
 
     return token.text
-      .replaceAll('...', '&#8230;')
-      .replaceAll('--', '&#8212;')
-      .replaceAll('---', '&#8211;')
-      .replaceAll(/(\w)'(\w)/g, '$1&#8217;$2')
-      .replaceAll(/s'/g, 's&#8217;')
-      .replaceAll('&#39;', '&#8217;')
-      .replaceAll(/["](.*?)["]/g, '&#8220;$1&#8221')
-      .replaceAll(/&quot;(.*?)&quot;/g, '&#8220;$1&#8221')
-      .replaceAll(/['](.*?)[']/g, '&#8216;$1&#8217;')
+      .replace(/\.{3}/g, '&#8230;')
+      .replace(/--/g, '&#8212;')
+      .replace(/"([^"]*?)"/g, '&#8220;$1&#8221;')
+      .replace(/&#39;/g, "'")
+      .replace(/&quot;/g, '"')
+      .replace(/'([^']*?)'/g, '&#8216;$1&#8217;')
   }
 
   override heading({
@@ -61,24 +58,26 @@ class DefaultRenderer extends Marked.Renderer {
   }
 
   override link({ href, title, tokens }: Marked.Tokens.Link) {
-    const text = this.parser.parseInline(tokens)
-    const titleAttr = title ? ` title="${title}"` : ''
-    if (href.startsWith('#')) {
-      return `<a href="${href}"${titleAttr}>${text}</a>`
-    }
     const isYouTube = isYouTubeUrl(href)
     const videoId = getYouTubeVideoId(href)
     if (isYouTube && videoId) {
-      return `<iframe src="https://www.youtube.com/embed/${videoId}" allowFullScreen class="rounded-xl youtube"></iframe>`
+      return `<iframe src="https://www.youtube.com/embed/${videoId}" allowFullScreen class="rounded-lg youtube"></iframe>`
     }
 
-    return `<a href="${href}"${titleAttr} target="_blank" rel="noopener noreferrer" class="hover:opacity-70">${text}</a>`
+    const text = this.parser.parseInline(tokens)
+    const titleAttr = title ? ` title="${title}"` : ''
+
+    if (href.startsWith('#')) {
+      return `<a href="${href}"${titleAttr} class="break-words">${text}</a>`
+    }
+
+    return `<a href="${href}"${titleAttr} target="_blank" rel="noopener noreferrer" class="hover:opacity-70 break-words">${text}</a>`
   }
 
   override image({ href, text, title }: Marked.Tokens.Image) {
     return `<img src="${href}" alt="${text ?? ''}" title="${
       title ?? ''
-    }" class="w-full rounded-xl" />`
+    }" class="w-full rounded-lg" />`
   }
 
   override code({ lang: info, text }: Marked.Tokens.Code): string {
