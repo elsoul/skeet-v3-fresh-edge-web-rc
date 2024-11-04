@@ -10,6 +10,9 @@ import {
 } from '@/components/utils/tailwinds.ts'
 import Toc from '@/islands/posts/Toc.tsx'
 import NewsHeader from '@/islands/layouts/news/NewsHeader.tsx'
+import { newsPosts } from '@/generated/newsPostsIndex.ts'
+import NewsIndexRow from '@/islands/rows/news/NewsIndexRow.tsx'
+import Pager from '@/islands/posts/Pager.tsx'
 
 const kind = 'news'
 
@@ -46,20 +49,30 @@ export const handler = define.handlers({
     ctx.state.description = attrs.description
     ctx.state.ogImage = new URL(asset(`${attrs.thumbnail}`), ctx.url).href
 
+    const allPosts = newsPosts[ctx.params.locale as keyof typeof newsPosts] ||
+      []
+    const postPath = `/${kind}/${ctx.params.slug}`
+    const currentIndex = allPosts.findIndex((post) => post.path === postPath)
+
+    const pagerData = {
+      nextPage: allPosts[currentIndex + 1],
+      prevPage: allPosts[currentIndex - 1],
+    }
+
     return page({
       page: {
         ctx,
         body,
         attrs,
         date: formattedDate,
+        pagerData,
       },
     })
   },
 })
 
-export default define.page<typeof handler>(function LegalSlugPage(props) {
+export default define.page<typeof handler>(function NewsSlugPage(props) {
   const { html, headings } = renderMarkdown(props.data.page.body)
-
   return (
     <>
       <NewsHeader title={props.state.title || 'News'} headings={headings} />
@@ -92,6 +105,7 @@ export default define.page<typeof handler>(function LegalSlugPage(props) {
               class='prose prose-zinc dark:prose-invert'
               dangerouslySetInnerHTML={{ __html: html }}
             />
+            <Pager pagerData={props.data.page.pagerData} />
           </div>
           <div className='max-h-full p-4 md:col-span-1'>
             <div
@@ -107,6 +121,7 @@ export default define.page<typeof handler>(function LegalSlugPage(props) {
           </div>
         </div>
       </div>
+      <NewsIndexRow defaultShowCounts={3} />
     </>
   )
 })
