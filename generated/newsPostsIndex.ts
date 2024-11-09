@@ -1,6 +1,24 @@
 export const newsPosts = {
   "en": [
     {
+      "title": "Solana Incentivized LST elSOL Now Supports Staking with New Blinks Technology",
+      "thumbnail": "/news/2024/11/06/elSOL.jpg",
+      "path": "/news/2024/11/08/solana-incentivized-lst-elsol-blinks",
+      "date": "2024-11-08"
+    },
+    {
+      "title": "ELSOUL LABO B.V. Officially Recognized by Cloudflare's Startup Program, Receives $250,000 in R&D Support",
+      "thumbnail": "/news/2024/11/07/CloudflareStartupProgramEN.jpg",
+      "path": "/news/2024/11/07/cloudflare-startup-program",
+      "date": "2024-11-07"
+    },
+    {
+      "title": "WebX 2024 Tokyo - Asia's Largest Web3 Conference Recap",
+      "thumbnail": "/news/2024/11/06/WebX2024.jpg",
+      "path": "/news/2024/11/06/webx2024-recap",
+      "date": "2024-11-06"
+    },
+    {
       "title": "Introducing the New 'solv MEV Mode' - Automating Solana Validator Operations and Optimizing Rewards",
       "thumbnail": "/news/2024/07/11/solvMEVMode.jpg",
       "path": "/news/2024/07/11/solv-mev-mode-released",
@@ -230,6 +248,24 @@ export const newsPosts = {
     }
   ],
   "ja": [
+    {
+      "title": "Solana Incentivized LST の elSOL が新技術 Blinks によるステーキングに対応",
+      "thumbnail": "/news/2024/11/06/elSOL.jpg",
+      "path": "/news/2024/11/08/solana-incentivized-lst-elsol-blinks",
+      "date": "2024-11-08"
+    },
+    {
+      "title": "エルソウルラボ、Cloudflareのスタートアッププログラム認定。$250,000の研究開発支援",
+      "thumbnail": "/news/2024/11/07/CloudflareStartupProgramJA.jpg",
+      "path": "/news/2024/11/07/cloudflare-startup-program",
+      "date": "2024-11-07"
+    },
+    {
+      "title": "WebX 2024 東京 - アジア最大級のWeb3カンファレンスを振り返る",
+      "thumbnail": "/news/2024/11/06/WebX2024.jpg",
+      "path": "/news/2024/11/06/webx2024-recap",
+      "date": "2024-11-06"
+    },
     {
       "title": "Solana バリデーター運用の自動化と報酬最適化を実現する新機能「solv MEV モード」をリリース",
       "thumbnail": "/news/2024/07/11/solvMEVMode.jpg",
