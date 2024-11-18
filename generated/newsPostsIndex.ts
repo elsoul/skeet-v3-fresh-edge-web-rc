@@ -1,6 +1,42 @@
 export const newsPosts = {
   "en": [
     {
+      "title": "ERPC, a Solana RPC provider, enhances the Tokyo region with premium-class nodes",
+      "thumbnail": "/news/2024/11/18/ERPCAddedPremiumNodesInTokyoEN.jpg",
+      "path": "/news/2024/11/18/erpc-added-premium-nodes-in-tokyo",
+      "date": "2024-11-18"
+    },
+    {
+      "title": "Earn Rewards Effortelssly with Solana Validator Automation",
+      "thumbnail": "/news/2024/11/15/ValidatorsSolutionsLaunchedEN.jpg",
+      "path": "/news/2024/11/15/validators-solutions-launched",
+      "date": "2024-11-15"
+    },
+    {
+      "title": "Solana Enhanced RPC provider \"ERPC\" announces a special free offer for BDLC NFT hodlers",
+      "thumbnail": "/news/2024/11/14/BDLCxERPC.jpg",
+      "path": "/news/2024/11/14/erpc-bdlc-bonus-plan",
+      "date": "2024-11-14"
+    },
+    {
+      "title": "Open-Source Solana RPC Tool \"solv\" Supports Geyser Plugins",
+      "thumbnail": "/news/2024/11/13/solvSupportsGeyserPlugins.jpg",
+      "path": "/news/2024/11/13/solv-supports-geyser-plugins",
+      "date": "2024-11-13"
+    },
+    {
+      "title": "ERPC - Enhanced Solana RPC Launched",
+      "thumbnail": "/news/2024/11/12/ERPCLaunchedEN.jpg",
+      "path": "/news/2024/11/12/erpc-launched",
+      "date": "2024-11-12"
+    },
+    {
+      "title": "Open-Source Solana Validator Tool \"solv\" Now Compatible with Mainnet-Beta v2 Update",
+      "thumbnail": "/news/2024/11/11/solvUpdateForSolanav2EN.jpg",
+      "path": "/news/2024/11/11/solv-update-for-solana-v2",
+      "date": "2024-11-11"
+    },
+    {
       "title": "Solana Incentivized LST elSOL Now Supports Staking with New Blinks Technology",
       "thumbnail": "/news/2024/11/06/elSOL.jpg",
       "path": "/news/2024/11/08/solana-incentivized-lst-elsol-blinks",
@@ -248,6 +284,42 @@ export const newsPosts = {
     }
   ],
   "ja": [
+    {
+      "title": "Solana RPC プロバイダ『ERPC』、東京リージョン強化のためプレミアムクラスノードを追加",
+      "thumbnail": "/news/2024/11/18/ERPCAddedPremiumNodesInTokyoJA.jpg",
+      "path": "/news/2024/11/18/erpc-added-premium-nodes-in-tokyo",
+      "date": "2024-11-18"
+    },
+    {
+      "title": "手放しで報酬を獲得！Solana バリデータ自動運用サービスを発表",
+      "thumbnail": "/news/2024/11/15/ValidatorsSolutionsLaunchedJA.jpg",
+      "path": "/news/2024/11/15/validators-solutions-launched",
+      "date": "2024-11-15"
+    },
+    {
+      "title": "Solana Enhanced RPC プロバイダの「ERPC」が BDLC NFT ホルダー向け特別無料優待を発表",
+      "thumbnail": "/news/2024/11/14/BDLCxERPC.jpg",
+      "path": "/news/2024/11/14/erpc-bdlc-bonus-plan",
+      "date": "2024-11-14"
+    },
+    {
+      "title": "オープンソース Solana RPC ツール \"solv\" の Geyser プラグイン対応",
+      "thumbnail": "/news/2024/11/13/solvSupportsGeyserPlugins.jpg",
+      "path": "/news/2024/11/13/solv-supports-geyser-plugins",
+      "date": "2024-11-13"
+    },
+    {
+      "title": "ERPC - Enhanced Solana RPC 一般公開開始",
+      "thumbnail": "/news/2024/11/12/ERPCLaunchedJA.jpg",
+      "path": "/news/2024/11/12/erpc-launched",
+      "date": "2024-11-12"
+    },
+    {
+      "title": "オープンソースの Solana バリデーターツール solv が Mainnet-Beta v2 アップデートに対応",
+      "thumbnail": "/news/2024/11/11/solvUpdateForSolanav2JA.jpg",
+      "path": "/news/2024/11/11/solv-update-for-solana-v2",
+      "date": "2024-11-11"
+    },
     {
       "title": "Solana Incentivized LST の elSOL が新技術 Blinks によるステーキングに対応",
       "thumbnail": "/news/2024/11/06/elSOL.jpg",
