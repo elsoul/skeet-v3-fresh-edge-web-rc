@@ -42,7 +42,7 @@ to fully supporting these advancements.
 
 ![Validators Solutions](/news/2024/12/26/ValidatorsSolutionsPriceListEN.jpg)
 
-In response to these developments, we will implement a new pricing plan starting
+In light of the above circumstances, we adopted a new pricing plan starting
 December 25, 2024. By standardizing high-spec nodes and strengthening the
 operational environment to more efficiently handle updates and potential issues,
 we aim to support higher uptime and consistent rewards. Increasing node
